@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A app where users can book tickets for  various activities !",
   "main": "index.js",
-  "type": "module",
+
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon -r dotenv/config  src/index.js"

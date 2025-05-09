@@ -1,7 +1,7 @@
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-import connectDB from "./db/db.js";
+const express = require("express");
+const connectDB = require("./db/db");
+const dotenv = require("dotenv");
+const cors = require("cors");
 
 dotenv.config();
 
@@ -17,7 +17,10 @@ app.get("/", (req, res) => {
   });
 });
 
-
+//ROUTES
+app.use("/api/auth", require("./routes/authRoutes"));
+app.use("/api/activities", require("./routes/activityRoute"));
+app.use("/api/bookings", require("./routes/bookingRoute"));
 
 //connecting to database and if everything goes well, the app will listen on port 8000
 connectDB()
