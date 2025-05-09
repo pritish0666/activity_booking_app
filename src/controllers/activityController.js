@@ -1,12 +1,12 @@
 const Activity = require("../models/Activity");
 
-// Controller to create a new activity
+
 exports.createActivity = async (req, res) => {
   try {
-    const { title, description, location, datetime } = req.body;
+    const { title, description, location, date, time } = req.body;
 
-    // Validation (basic)
-    if (!title || !location || !datetime) {
+    
+    if (!title || !location || !date || !time) {
       return res
         .status(400)
         .json({ message: "Title, location and datetime are required" });
@@ -16,7 +16,8 @@ exports.createActivity = async (req, res) => {
       title,
       description,
       location,
-      datetime,
+      date,
+      time,
     });
 
     await activity.save();
@@ -30,7 +31,9 @@ exports.createActivity = async (req, res) => {
   }
 };
 
-// Already existing: getAllActivities()
+//////////////////////////////////////////////////////////////
+
+
 exports.getAllActivities = async (req, res) => {
   try {
     const activities = await Activity.find({});
