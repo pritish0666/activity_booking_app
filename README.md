@@ -1,6 +1,6 @@
 # Activity Booking API
 
-A RESTful API for managing activities and bookings.
+A RESTful API for booking activities.
 
 ## Setup Instructions
 
